@@ -81,7 +81,6 @@ pause;
 % with all-ones theta and lambda = 10
 test_theta = ones(size(X,2),1);
 [cost, grad] = costFunctionReg(test_theta, X, y, 10);
-
 fprintf('\nCost at test theta (with lambda = 10): %f\n', cost);
 fprintf('Expected cost (approx): 3.16\n');
 fprintf('Gradient at test theta - first five values only:\n');
