@@ -20,10 +20,22 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
-
-
-
-
+n = size(X, 1);
+min = zeros(size(X,1), 1);
+for i = 1:n
+  a = X(i,:);
+  for j = 1:K
+   b = a - centroids(j,:);
+   tmp = b * b';
+   if idx(i) == 0
+     idx(i) = j;
+     min(i) = tmp;
+   else if tmp < min(i)
+     idx(i) = j;
+     min(i) = tmp;
+   end  
+  end
+end
 
 
 
